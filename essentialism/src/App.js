@@ -6,6 +6,7 @@ import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import Dashboard from './components/pages/Dashboard';
 import NavBar from './components/navbar/NavBar';
+import DashboardValues from './components/pages/DashboardValues';
 
 function App() {
   return (
@@ -20,8 +21,11 @@ function App() {
          <LoginPage />
        </Route>
        {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
-       <Route path="/dashboard">
+       <Route exact path="/dashboard">
          <Dashboard />
+       </Route>
+       <Route path="/dashboard/values">
+         <DashboardValues />
        </Route>
      </Switch> 
     </div>
