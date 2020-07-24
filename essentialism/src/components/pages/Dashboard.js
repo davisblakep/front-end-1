@@ -8,6 +8,9 @@ import List from "../forms/List";
 const Dashboard = () => {
   const history = useHistory();
 
+  const addValues = () => {
+    history.push("/dashboard/values");
+  };
   const submit = () => {
     history.push("/");
   };
@@ -47,9 +50,17 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Button onClick={submit} variant="outlined">
+      {/* <Button onClick={submit} variant="outlined">
         User Logs Out
-      </Button>
+      </Button> */}
+      <div className="dashboard">
+        <Button onClick={submit} variant="outlined">
+          User Logs Out
+        </Button>
+        <Button onClick={addValues} variant="outlined">
+          User Chooses Yes to Add Values
+        </Button>
+      </div>
       <div className="fluid-container app-container">
         <Header addItem={add} filter={filter} setFilter={setFilter} />
         {!loading && (
