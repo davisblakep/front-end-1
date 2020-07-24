@@ -89,7 +89,7 @@ export default function BackerSignupForm(props) {
   let history = useHistory();
 
   const submitButton = () => {
-    return history.push("/login")
+    return history.push("/dashboard")
 }
 
   const submitForm = (e) => {
