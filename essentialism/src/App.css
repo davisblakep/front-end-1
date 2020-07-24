@@ -4,7 +4,7 @@ body{
 }
 
 .homePage{
-    background-image: url('https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+    background-image: url('https://images.pexels.com/photos/3569518/pexels-photo-3569518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,7 +13,16 @@ body{
   }
 
   .loginPage{
-    background-image: url('https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+    background-image: url('https://images.pexels.com/photos/3014012/pexels-photo-3014012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 92vh;
+  }
+
+  .createUserPage {
+    background-image: url('https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +31,7 @@ body{
   }
 
   .dashboard{
-    background-image: url('https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-image: url('https://images.pexels.com/photos/242124/pexels-photo-242124.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +40,7 @@ body{
   }
 
   .dashboardValues{
-    background-image: url('https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-image: url('https://images.pexels.com/photos/34090/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
