@@ -1,22 +1,22 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import LoginForm from '../forms/LoginForm';
+import SignupForm from '../forms/SignupForm';
 
 
-const LoginPage = () => {
+const CreateUserPage = () => {
 
     const history = useHistory();
 
     const submit = () => {
-        history.push('/dashboard')
+        history.push('/login')
     }
 
     return(
-        <div className="loginPage">
-            <LoginForm />
+        <div className="createUserPage">
+            <SignupForm />
         </div>
     )
 }
 
-export default LoginPage;
+export default CreateUserPage;

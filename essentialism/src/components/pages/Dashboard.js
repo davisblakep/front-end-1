@@ -11,9 +11,14 @@ const Dashboard = () => {
         history.push('/')
     }
 
+    const addValues = () => {
+        history.push('/dashboard/values')
+    }
+
     return(
         <div className="dashboard">
             <Button onClick={submit} variant='outlined'>User Logs Out</Button>
+            <Button onClick={addValues} variant='outlined'>User Chooses Yes to Add Values</Button>
         </div>
     )
 }

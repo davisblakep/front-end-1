@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import LoginForm from '../forms/LoginForm';
+import Values from '../lists/Values'
 
 
-const LoginPage = () => {
+const DashboardValues = () => {
 
     const history = useHistory();
 
@@ -13,10 +13,11 @@ const LoginPage = () => {
     }
 
     return(
-        <div className="loginPage">
-            <LoginForm />
+        <div className="dashboardValues">
+            <Button onClick={submit} variant='outlined'>User Confirms Values they wanted</Button>
+            <Values />
         </div>
     )
 }
 
-export default LoginPage;
+export default DashboardValues;
