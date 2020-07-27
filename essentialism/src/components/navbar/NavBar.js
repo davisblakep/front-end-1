@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LineStyleIcon from '@material-ui/icons/LineStyle';
 
 import { Link } from 'react-router-dom';
 
@@ -32,12 +34,22 @@ export default function NavAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <HomeIcon />
           </IconButton>
+          <Link to="/" style={{textDecoration: "none", color: "white"}}>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <LineStyleIcon />
+          </IconButton>
+          </Link>
           </Link>
           <Typography variant="h6" className={classes.title}>
             Essentialism
           </Typography>
           <Link to="/login" style={{textDecoration: 'none', color: "white"}}>
           <Button color="inherit">Login</Button>
+          </Link>
+          <Link to="/dashboard" style={{textDecoration: "none", color: "white"}}>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <AccountCircleIcon />
+          </IconButton>
           </Link>
         </Toolbar>
       </AppBar>
