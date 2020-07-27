@@ -116,7 +116,7 @@ body {
 }
 
 .createUserPage {
-  background-image: url("https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-image: url("https://images.pexels.com/photos/671915/pexels-photo-671915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,12 +125,13 @@ body {
 }
 
 .dashboard-background {
-  background-image: url("https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  /* background-image: url("https://images.pexels.com/photos/3105407/pexels-photo-3105407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 92vh; */
+  background-color: white;
 }
 
 .dashboardValues {
@@ -143,6 +144,7 @@ body {
   height: 100%;
 }
 
+
 .welcomePage {
   background-image: url("https://images.pexels.com/photos/1529881/pexels-photo-1529881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
@@ -151,3 +153,13 @@ body {
   background-size: cover;
   height: 100%;
 }
+
+.feedbackPage {
+  background-image: url("https://images.pexels.com/photos/594421/pexels-photo-594421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 92vh;
+}
+

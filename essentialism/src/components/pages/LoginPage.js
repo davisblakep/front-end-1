@@ -13,7 +13,7 @@ const LoginPage = () => {
 
   return (
     <Spring
-    config={{delay: 200, duration: 775}}
+    config={{delay: 100, duration: 575}}
     from={{ opacity: 0}}
     to={{ opacity: 1}}
     >

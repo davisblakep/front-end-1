@@ -1,7 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import Values from '../lists/Values'
+import Values from '../lists/Values';
+import { Spring } from 'react-spring/renderprops';
 
 
 const DashboardValues = () => {
@@ -13,12 +14,32 @@ const DashboardValues = () => {
     }
 
     return(
+        <Spring
+        config={{delay: 50, duration: 750}}
+        from={{ opacity: 0}}
+        to={{ opacity: 1}}
+        >
+            {props=>(
+                <div style={props}>
         <div className="dashboardValues">
+            <Spring
+        config={{delay: 800, duration: 775}}
+        from={{ opacity: 0}}
+        to={{ opacity: 1}}
+        >
+            {props=>(
+                <div style={props}>
             <div style={{display: "flex", justifyContent: "center"}}>
-            <Button style={{color: "black", backgroundColor: "white"}} onClick={submit} variant='outlined'>Done</Button>
+            <Button style={{color: "black", backgroundColor: "white", marginTop: "2%"}} onClick={submit} variant='outlined'>Done</Button>
             </div>
             <Values />
-        </div>
+            </div>
+               )}
+               </Spring>
+            </div>
+            </div>
+            )}
+            </Spring>
     )
 }
 
