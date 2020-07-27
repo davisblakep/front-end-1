@@ -27,7 +27,7 @@ const WelcomeUserPage = () => {
                 <br />
                 <p>Let's add some values that are important to you.</p>
                 <Spring
-    config={{delay: 3000, duration: 1050}}
+    config={{delay: 2000, duration: 1050}}
     from={{ opacity: 0}}
     to={{ opacity: 1}}
     >

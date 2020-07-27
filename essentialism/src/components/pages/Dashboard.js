@@ -58,15 +58,15 @@ const Dashboard = () => {
     >
         {props=>(
             <div style={props}>
-    <div className="dashboard-background">
-      <div className="dashboard">
-        <Button onClick={submit} variant="outlined">
-          User Logs Out
-        </Button>
-        <Button onClick={addValues} variant="outlined">
-          User Chooses Yes to Add Values
-        </Button>
-        <div className="fluid-container app-container">
+    \
+      {/* <div className="dashboard"> */}
+      
+        <div className="fluid-container app-container" style={{backgroundColor: "black", marginTop: "-2%"}}>
+        <div className="dashboard-background">
+        
+       
+          
+        
         <Header addItem={add} filter={filter} setFilter={setFilter} />
         {!loading && (
           <div className="list">
@@ -78,11 +78,22 @@ const Dashboard = () => {
             Loading please wait...
           </div>
         )}
+        <div style={{display: "flex", flexDirection: "row-reverse"}}>
+        <Button style={{color: "white", backgroundColor: "black"}} onClick={submit} variant="outlined">
+          Log Out
+        </Button>
+        <Button style={{color: "white", backgroundColor: "black"}} onClick={addValues} variant="outlined">
+          Change Values
+        </Button>
+        <Button style={{color: "white", backgroundColor: "black"}} variant="outlined">
+          Help
+        </Button>
+        </div>
       </div>
       </div>
       
     </div>
-    </div>
+    // </div>
             )}
             </Spring>
 );
