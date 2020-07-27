@@ -15,7 +15,7 @@ const DashboardValues = () => {
     return(
         <div className="dashboardValues">
             <div style={{display: "flex", justifyContent: "center"}}>
-            <Button style={{color: "black", backgroundColor: "white"}} onClick={submit} variant='outlined'>Done</Button>
+            <Button style={{color: "black", backgroundColor: "white", marginTop: "2%"}} onClick={submit} variant='outlined'>Done</Button>
             </div>
             <Values />
         </div>

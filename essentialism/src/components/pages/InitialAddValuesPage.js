@@ -10,7 +10,7 @@ const InitialAddValuesPage = () => {
     const history = useHistory();
 
     const submit = () => {
-        history.push('/dashboard')
+        history.push('/feedback')
     }
 
     return(
@@ -31,7 +31,7 @@ const InitialAddValuesPage = () => {
                 <div style={props}>
             <div style={{display: "flex", justifyContent: "center", flexDirection: "row", alignItems: "center", marginBottom: "4%", marginTop: "2%"}}>
                 <h3 style={{color: "white", marginRight: "2%"}}>Select at least three values</h3>
-                <Button style={{color: "black", backgroundColor: "white"}} color="primary">Done</Button>
+                <Button onClick={submit} style={{color: "black", backgroundColor: "white"}} color="primary">Done</Button>
             </div>
                <Values />
                </div>

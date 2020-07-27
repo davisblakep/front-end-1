@@ -9,7 +9,8 @@ import NavBar from "./components/navbar/NavBar";
 import DashboardValues from "./components/pages/DashboardValues";
 import CreateUserPage from "./components/pages/CreateUserPage";
 import WelcomeUserPage from "./components/pages/WelcomeUserPage";
-import InitialAddValuesPage from "./components/pages/InitialAddValuesPage"
+import InitialAddValuesPage from "./components/pages/InitialAddValuesPage";
+import FeedbackPage from './components/pages/FeedbackPage';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/choose-values">
             <InitialAddValuesPage />
+          </Route>
+          <Route path="/feedback">
+            <FeedbackPage />
           </Route>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/dashboard">
