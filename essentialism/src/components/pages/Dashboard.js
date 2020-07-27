@@ -85,6 +85,9 @@ const Dashboard = () => {
         <Button style={{color: "white", backgroundColor: "black"}} onClick={addValues} variant="outlined">
           Change Values
         </Button>
+        <Button style={{color: "white", backgroundColor: "black"}} variant="outlined">
+          Help
+        </Button>
         </div>
       </div>
       </div>
