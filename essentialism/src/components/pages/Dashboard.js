@@ -59,9 +59,14 @@ const Dashboard = () => {
         {props=>(
             <div style={props}>
     \
-      <div className="dashboard">
-        <div className="fluid-container app-container">
+      {/* <div className="dashboard"> */}
+      
+        <div className="fluid-container app-container" style={{backgroundColor: "black", marginTop: "-2%"}}>
         <div className="dashboard-background">
+        
+       
+          
+        
         <Header addItem={add} filter={filter} setFilter={setFilter} />
         {!loading && (
           <div className="list">
@@ -85,7 +90,7 @@ const Dashboard = () => {
       </div>
       
     </div>
-    </div>
+    // </div>
             )}
             </Spring>
 );
