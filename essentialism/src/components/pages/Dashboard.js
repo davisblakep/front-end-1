@@ -5,6 +5,8 @@ import goalsApi from "../forms/goalsApi";
 import isOverdue from "../forms/isOverdue";
 import Header from "../forms/Header";
 import List from "../forms/List";
+import { Spring } from 'react-spring/renderprops';
+
 const Dashboard = () => {
   const history = useHistory();
 
@@ -49,10 +51,14 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="dashboard">
-      {/* <Button onClick={submit} variant="outlined">
-        User Logs Out
-      </Button> */}
+    <Spring
+    config={{delay: 100, duration: 575}}
+    from={{ opacity: 0}}
+    to={{ opacity: 1}}
+    >
+        {props=>(
+            <div style={props}>
+    <div className="dashboard-background">
       <div className="dashboard">
         <Button onClick={submit} variant="outlined">
           User Logs Out
@@ -60,8 +66,7 @@ const Dashboard = () => {
         <Button onClick={addValues} variant="outlined">
           User Chooses Yes to Add Values
         </Button>
-      </div>
-      <div className="fluid-container app-container">
+        <div className="fluid-container app-container">
         <Header addItem={add} filter={filter} setFilter={setFilter} />
         {!loading && (
           <div className="list">
@@ -74,9 +79,13 @@ const Dashboard = () => {
           </div>
         )}
       </div>
-      );
+      </div>
+      
     </div>
-  );
+    </div>
+            )}
+            </Spring>
+);
 };
 
 export default Dashboard;

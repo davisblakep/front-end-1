@@ -13,7 +13,7 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 245,
+    minWidth: 225,
     maxWidth: 245,
   },
 });
@@ -49,7 +49,7 @@ const initialValue = [
     img:
       "https://images.pexels.com/photos/3059747/pexels-photo-3059747.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     id: 4,
-    isSelected: true,
+    isSelected: false,
   },
   {
     value: "Less Social Media",
@@ -57,7 +57,7 @@ const initialValue = [
     img:
       "https://images.pexels.com/photos/17663/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     id: 5,
-    isSelected: true,
+    isSelected: false,
   },
   {
     value: "Nutrition",
@@ -65,7 +65,7 @@ const initialValue = [
     img:
       "https://images.pexels.com/photos/8110/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     id: 6,
-    isSelected: true,
+    isSelected: false,
   },
 ];
 
@@ -99,12 +99,18 @@ const Values = () => {
 
   return (
     <div>
-      <div style={{ padding: "6%" }}>
-        <h3 style={{ color: "white" }}>Your Values</h3>
+      {/* <div style={{display: "flex", justifyContent: "center", flexDirection: "row", alignItems: "center", marginBottom: "4%", marginTop: "-2%"}}>
+        <h3 style={{color: "white", marginRight: "2%"}}>Select at least three values</h3>
+      <Button style={{color: "black", backgroundColor: "white"}} color="primary">Done</Button>
+      </div> */}
+    <div style={{display: "flex", flexDirection: "row-reverse", paddingTop: "2%"}}>
+      <div style={{ marginTop: "3%", paddingBottom: "2%", paddingRight: "2%", paddingLeft: "2%", width: "50%"}}>
+        <h3 style={{ color: "white", paddingBottom: "5%", paddingTop: "2%", textAlign: "center" }}>Your Values</h3>
         <Grid
           container
           spacing={7}
           display="flex"
+          direction="column-reverse"
           justify="space-around"
           align="center"
         >
@@ -112,20 +118,20 @@ const Values = () => {
             return (
               item.isSelected && (
                 <Grid item xs key={item.id}>
-                  <Card className={classes.root}>
+                  <Card className={classes.root} style={{backgroundColor: "black"}}>
                     <CardActionArea>
                       <CardMedia
                         component="img"
                         alt={item.value}
-                        height="220"
+                        height="200"
                         image={item.img}
                         title={item.value}
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h5" component="h2" style={{color: "white"}}>
                           {item.value}
                         </Typography>
-                        <Typography
+                        <Typography style={{color: "lightgray"}}
                           variant="body2"
                           color="textSecondary"
                           component="p"
@@ -137,6 +143,7 @@ const Values = () => {
                     <CardActions>
                       {item.isSelected ? (
                         <Button
+                        style={{color: "white"}}
                           onClick={() => toggleItem(item.id)}
                           size="small"
                           color="primary"
@@ -162,12 +169,13 @@ const Values = () => {
           })}
         </Grid>
       </div>
-      <div style={{ padding: "6%" }}>
-        <h3 style={{ color: "white" }}>Add Additional Values</h3>
+      <div style={{ marginTop: "3%", paddingBottom: "2%", paddingRight: "2%", paddingLeft: "2%", width: "50%", borderRight: "white 2px solid" }}>
+        <h3 style={{ color: "white", paddingBottom: "5%", paddingTop: "2%", textAlign: "center" }}>Value List</h3>
         <Grid
           container
           spacing={7}
           display="flex"
+          direction="column"
           justify="space-around"
           align="center"
         >
@@ -175,20 +183,21 @@ const Values = () => {
             return (
               !item.isSelected && (
                 <Grid item xs key={item.id}>
-                  <Card className={classes.root}>
+                  <Card className={classes.root} style={{backgroundColor: "black"}}>
                     <CardActionArea>
                       <CardMedia
+                        style={{filter: "grayscale(1)"}}
                         component="img"
                         alt={item.value}
-                        height="220"
+                        height="200"
                         image={item.img}
                         title={item.value}
                       />
                       <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h5" component="h2" style={{color: "white"}}>
                           {item.value}
                         </Typography>
-                        <Typography
+                        <Typography style={{color: "lightgray"}}
                           variant="body2"
                           color="textSecondary"
                           component="p"
@@ -207,6 +216,7 @@ const Values = () => {
                           onClick={() => toggleItem(item.id)}
                           size="small"
                           color="primary"
+                          style={{color: "white"}}
                         >
                           Add
                         </Button>
@@ -225,6 +235,7 @@ const Values = () => {
           })}
         </Grid>
       </div>
+    </div>
     </div>
   );
 };
