@@ -68,7 +68,7 @@ const initialState = {
       ],
     isFetching: false,
     error: '',
-    displayName: 'TEST',
+    displayName: 'LOGIN',
     displayNav: '/login',
 }
 
