@@ -9,7 +9,9 @@ const LoginPage = () => {
   //   const submit = () => {
   //     history.push("/dashboard");
   //   };
+  //
 
+  //create a protected page when user logs in
   return (
     <div className="loginPage">
       <LoginForm />
