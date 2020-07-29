@@ -50,3 +50,18 @@ export const toggleValue = id => {
     
   };
 };
+
+export const updateNavName = username => {
+    console.log("Value clicked from updateNavName action", username);
+    return dispatch => {
+      dispatch({type: "CHANGE_NAV_NAME", payload: username});
+      
+    };
+  };
+
+  export const logoutNavName = () => {
+    return dispatch => {
+      dispatch({type: "LOGOUT_NAV_NAME"});
+      
+    };
+  };
