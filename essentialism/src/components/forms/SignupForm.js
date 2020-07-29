@@ -11,8 +11,8 @@ import * as yup from "yup";
 // import axios from 'axios';
 
 const formSchema = yup.object().shape({
-  FirstName: yup.string().required("First Name is a required field"),
-  LastName: yup.string().required("Last Name is a required field"),
+  firstName: yup.string().required("First Name is a required field"),
+  lastName: yup.string().required("Last Name is a required field"),
   //   email: yup.string().required("Email is a required field"),
   //   phone: yup.string().required("Phone Number is a required field"),
   username: yup.string().required("Username is a required field"),
@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BackerSignupForm(props) {
   const [formState, setFormState] = useState({
-    FirstName: "",
-    LastName: "",
+    firstName: "",
+    lastName: "",
     // email: "",
     // phone: "",
     username: "",
@@ -54,8 +54,8 @@ export default function BackerSignupForm(props) {
   });
 
   const [errorState, setErrorState] = useState({
-    FirstName: "",
-    LastName: "",
+    firstName: "",
+    lastName: "",
     // email: "",
     // phone: "",
     username: "",
@@ -90,14 +90,14 @@ export default function BackerSignupForm(props) {
   let history = useHistory();
 
   const submitButton = () => {
-    return history.push("/dashboard");
+    return history.push("/welcome");
   };
 
   const submitForm = (e) => {
     e.preventDefault();
     setFormState({
-      FirstName: "",
-      LastName: "",
+      firstName: "",
+      lastName: "",
       // email: "",
       // phone: "",
       username: "",
@@ -137,29 +137,29 @@ export default function BackerSignupForm(props) {
             <TextField
               required
               autoFocus
-              id="FirstName"
-              name="FirstName"
+              id="firstName"
+              name="firstName"
               label="First Name"
               variant="filled"
               type="text"
-              value={formState.FirstName}
+              value={formState.firstName}
               onChange={inputChange}
             />
             <Typography style={{ color: "red", fontSize: "10px" }}>
-              {errorState.FirstName}
+              {errorState.firstName}
             </Typography>
             <TextField
               required
-              id="LastName"
-              name="LastName"
+              id="lastName"
+              name="lastName"
               label="Last Name"
               variant="filled"
               type="text"
-              value={formState.LastName}
+              value={formState.lastName}
               onChange={inputChange}
             />
             <Typography style={{ color: "red", fontSize: "10px" }}>
-              {errorState.LastName}
+              {errorState.lastName}
             </Typography>
             {/* <TextField required 
             id="email" 
