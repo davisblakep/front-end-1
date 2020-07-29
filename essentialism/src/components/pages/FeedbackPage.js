@@ -10,7 +10,7 @@ const FeedbackPage = () => {
       history.push("/dashboard");
     };
     const feedback = () => {
-        history.push("/feedback");
+        history.push("/feedback-form");
       };
 
   return (
