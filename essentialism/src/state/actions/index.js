@@ -73,6 +73,7 @@ export const addGoal = (title, date) => (dispatch) => {
     .catch((err) => dispatch({ type: ADD_FAILURE }));
 };
 
+
 export const removeGoal = (id) => (dispatch) => {
   dispatch({ type: REMOVE_ITEM });
   axios
@@ -80,3 +81,27 @@ export const removeGoal = (id) => (dispatch) => {
     .then((res) => dispatch({ type: REMOVE_SUCCESS }))
     .catch((err) => dispatch({ type: REMOVE_FAILURE }));
 };
+
+export const toggleValue = id => {
+  console.log("Value clicked from toggleValue action",id);
+  return dispatch => {
+    dispatch({type: "TOGGLE_VALUE", payload: id});
+    
+  };
+};
+
+export const updateNavName = username => {
+    console.log("Value clicked from updateNavName action", username);
+    return dispatch => {
+      dispatch({type: "CHANGE_NAV_NAME", payload: username});
+      
+    };
+  };
+
+  export const logoutNavName = () => {
+    return dispatch => {
+      dispatch({type: "LOGOUT_NAV_NAME"});
+      
+    };
+  };
+
