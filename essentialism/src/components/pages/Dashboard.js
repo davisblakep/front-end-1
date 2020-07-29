@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import goalsApi from "../forms/goalsApi";
@@ -6,14 +7,16 @@ import isOverdue from "../forms/isOverdue";
 import Header from "../forms/Header";
 import List from "../forms/List";
 import { Spring } from 'react-spring/renderprops';
+import { logoutNavName } from '../../state/actions'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const history = useHistory();
 
   const addValues = () => {
     history.push("/dashboard/values");
   };
   const submit = () => {
+    props.logoutNavName();
     history.push("/");
   };
 
@@ -99,4 +102,4 @@ const Dashboard = () => {
 );
 };
 
-export default Dashboard;
+export default connect(null, {logoutNavName})(Dashboard);
