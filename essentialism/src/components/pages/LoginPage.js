@@ -10,7 +10,9 @@ const LoginPage = () => {
   //   const submit = () => {
   //     history.push("/dashboard");
   //   };
+  //
 
+  //create a protected page when user logs in
   return (
     <Spring
     config={{delay: 100, duration: 575}}
