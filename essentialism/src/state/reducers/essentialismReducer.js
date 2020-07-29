@@ -68,6 +68,8 @@ const initialState = {
       ],
     isFetching: false,
     error: '',
+    displayName: 'TEST',
+    displayNav: '/login',
 }
 
 
@@ -107,24 +109,21 @@ export function essentialismReducer(state = initialState, action){
                 }
                 return item;
             })
-            
               }
+              case "CHANGE_NAV_NAME":
+        return{
+            ...state,
+            displayName: action.payload,
+            displayNav: "/dashboard"
+              }
+              case "LOGOUT_NAV_NAME":
+                return{
+                    ...state,
+                    displayName: "LOGIN",
+                    displayNav: "/login"
+                      }
         
         default: 
             return state;
     }
 }
-
-
-// {
-//     ...state,
-//     values: [state.values.map(item => {
-//         if (action.payload === item.id) {
-//           return {
-//             ...item,
-//             isSelected: !item.isSelected,
-//           };
-//         }
-//         return item;
-//     })
-//     ]}
