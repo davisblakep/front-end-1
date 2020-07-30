@@ -107,11 +107,11 @@ const Dashboard = (props) => {
         <Button style={{color: "white", backgroundColor: "black"}} onClick={addValues} variant="outlined">
           Change Values
         </Button>
-        
+        <Link to="helppage">
         <Button style={{color: "white", backgroundColor: "black"}} variant="outlined">
           Help
         </Button>
-       
+        </Link>
         </div>
       </div>
       </div>

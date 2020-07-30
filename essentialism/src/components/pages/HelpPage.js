@@ -5,7 +5,16 @@ import ReactPlayer from 'react-player'
 
 const HelpPage = () => {
       return (
-         <div></div>
+          <div style={{display: "flex", justifyItems: "center", alignItems: "center", width: "28vw", marginTop: "1%", marginLeft: "10%", marginRight: "4%"}}>
+        <div className='player-wrapper' style={{height: "66vh"}}>
+          <ReactPlayer
+            className='react-player'
+            url='https://www.youtube.com/watch?v=tsP5u6pG0RY'
+            width='375%'
+            height='123%'
+          />
+        </div>
+        </div>
       )
 }
 
