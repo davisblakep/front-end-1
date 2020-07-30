@@ -3,14 +3,21 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import goalsApi from "../forms/goalsApi";
-import isOverdue from "../forms/isOverdue";
-import Header from "../forms/Header";
-import List from "../forms/List";
+import Goals from "../goals/Goals";
+import GoalForm from "../goals/GoalForm";
+import { Jumbotron, Container } from "reactstrap";
+
+// import goalsApi from "../forms/goalsApi";
+// import isOverdue from "../forms/isOverdue";
+// import Header from "../forms/Header";
+// import List from "../forms/List";
+
+
 import { Spring } from 'react-spring/renderprops';
 import { logoutNavName } from '../../state/actions'
 
 const Dashboard = (props) => {
+
   const history = useHistory();
 
   const addValues = () => {
@@ -21,56 +28,67 @@ const Dashboard = (props) => {
     history.push("/");
   };
 
-  const defaultFilter = { overdueOnly: false, includeComplete: false };
+  // const defaultFilter = { overdueOnly: false, includeComplete: false };
 
-  const [items, setItems] = React.useState([]);
-  const [filter, setFilter] = React.useState(defaultFilter);
-  const [loading, setLoading] = React.useState(true);
+  // const [items, setItems] = React.useState([]);
+  // const [filter, setFilter] = React.useState(defaultFilter);
+  // const [loading, setLoading] = React.useState(true);
 
-  const loadItems = async () => {
-    setLoading(true);
-    const todoItems = await goalsApi.get();
-    setItems(todoItems);
-    setLoading(false);
-  };
+  // const loadItems = async () => {
+  //   setLoading(true);
+  //   const todoItems = await goalsApi.get();
+  //   setItems(todoItems);
+  //   setLoading(false);
+  // };
 
-  React.useEffect(() => {
-    loadItems();
-  }, []);
+  // React.useEffect(() => {
+  //   loadItems();
+  // }, []);
 
-  const complete = async (id) => {
-    const updatedItems = await goalsApi.complete(id);
-    setItems(updatedItems);
-  };
+  // const complete = async (id) => {
+  //   const updatedItems = await goalsApi.complete(id);
+  //   setItems(updatedItems);
+  // };
 
-  const add = async (item) => {
-    const updatedItems = await goalsApi.add(item);
-    setItems(updatedItems);
-  };
+  // const add = async (item) => {
+  //   const updatedItems = await goalsApi.add(item);
+  //   setItems(updatedItems);
+  // };
 
-  const filteredItems = items.filter(
-    (item) =>
-      (filter.includeComplete || !item.complete) &&
-      (!filter.overdueOnly || isOverdue(item))
-  );
+  // const filteredItems = items.filter(
+  //   (item) =>
+  //     (filter.includeComplete || !item.complete) &&
+  //     (!filter.overdueOnly || isOverdue(item))
+  // );
 
   return (
-    <Spring
-    config={{delay: 100, duration: 575}}
-    from={{ opacity: 0}}
-    to={{ opacity: 1}}
-    >
-        {props=>(
-            <div style={props}>
-    \
-      {/* <div className="dashboard"> */}
-      
-        <div className="fluid-container app-container" style={{backgroundColor: "black", marginTop: "-2%"}}>
-        <div className="dashboard-background">
-        
-       
-          
-        
+    <div className="dashboard">
+      <Button onClick={submit} variant="outlined">
+        User Logs Out
+      </Button>
+      <Button onClick={addValues} variant="outlined">
+        User Chooses Yes to Add Values
+      </Button>
+      <div>
+        <Jumbotron fluid style={{ padding: "5px" }}>
+          <Container className="container" fluid>
+            <h1 className="display-3">Ready for your new challenges?</h1>
+            <p className="lead">
+              In order to become an essentialist you must create your goals
+              based on the values you selected.
+            </p>
+          </Container>
+        </Jumbotron>
+        <div>
+          <h1>Current Goals</h1>
+          <Goals />
+        </div>
+      </div>
+      <div>
+        <h1>Add New Goals</h1>
+        <GoalForm />
+      </div>
+      {/* <div className="fluid-container app-container">
         <Header addItem={add} filter={filter} setFilter={setFilter} />
         {!loading && (
           <div className="list">
@@ -98,11 +116,10 @@ const Dashboard = (props) => {
       </div>
       </div>
       
+      </div> */}
+      
     </div>
-    // </div>
-            )}
-            </Spring>
-);
+  );
 };
 
 export default connect(null, {logoutNavName})(Dashboard);
