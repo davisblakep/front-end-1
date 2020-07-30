@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button'
 const FeedbackPage = () => {
     const history = useHistory();
 
-    const skip = () => {
-      history.push("/dashboard");
-    };
+    // const skip = () => {
+    //   history.push("/dashboard");
+    // };
     const feedback = () => {
         history.push("/feedback-form");
       };
