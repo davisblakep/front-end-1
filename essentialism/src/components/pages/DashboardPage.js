@@ -88,13 +88,22 @@ const DashboardPage = (props) => {
             </p>
           </Container>
         </Jumbotron>
+        <div className='container' style={{display: "flex", justifyContent: "space-evenly", height: "20%"}}>
+            <h1 style={{color: "lightgray"}}>Your Current Values:</h1>
+            <div style={{display: "flex", flexDirection: "column"}}>
+            {props.data.map(item => {return(
+                <Button color="white" style={{color: "white"}}>{item.value}</Button>
+            )})}
+          </div>
+         
+        </div>
         <div className="container">
-          <h1>Current Goals</h1>
+          <h1 style={{color: "lightgray", marginLeft: "1%"}}>Current Goals</h1>
           <Goals />
         </div>
       </div>
-      <div className="container">
-        <h1>Add New Goals</h1>
+      <div className="container" style={{marginBottom: "8%"}}>
+        <h1 style={{color: "lightgray", marginLeft: "1%"}}>Add New Goals</h1>
         <GoalForm />
       </div>
       {/* <div className="fluid-container app-container">
@@ -115,4 +124,11 @@ const DashboardPage = (props) => {
   );
 };
 
-export default connect(null, {logoutNavName})(DashboardPage);
+const mapStateToProps = (state) => {
+
+    return {
+      data: state.essentialismReducer.values,
+    };
+  };
+
+export default connect(mapStateToProps, {logoutNavName})(DashboardPage);
