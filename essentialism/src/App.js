@@ -13,9 +13,10 @@ import WelcomeUserPage from "./components/pages/WelcomeUserPage";
 import InitialAddValuesPage from "./components/pages/InitialAddValuesPage";
 import FeedbackPage from './components/pages/FeedbackPage';
 import FeedbackFormPage from './components/pages/FeedbackFormPage';
-import HelpPage from './components/pages/HelpPage'
+import HelpPage from './components/pages/HelpPage';
+import { Spring } from 'react-spring/renderprops';
 
-function App() {
+function App(props) {
   return (
     <div>
       <NavBar />
@@ -48,7 +49,17 @@ function App() {
           </Route>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/dashboard">
-            <DashboardPage />
+          <Spring
+            config={{delay: 100, duration: 575}}
+            from={{ opacity: 0}}
+            to={{ opacity: 1}}
+            >
+            {props=>(
+              <div style={props}>
+                 <DashboardPage />
+              </div>
+            )}
+          </Spring>
           </Route>
           
           <Route exact path="/helppage">

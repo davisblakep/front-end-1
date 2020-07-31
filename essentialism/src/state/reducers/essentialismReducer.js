@@ -15,13 +15,12 @@ import {
       id: 1,
     },
     {
-      title: "Eat a cheeseburger",
-      date: "August 01 2020",
+      title: "Donate 1/2 of clothing in closet to clear space.",
+      date: "August 25 2020",
       id: 2,
     },
   ],
-  isFetching: false,
-  error: "",
+  
   isSaving: false,
     updated: false,
     
