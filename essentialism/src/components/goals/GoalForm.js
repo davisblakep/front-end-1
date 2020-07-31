@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addGoal } from "../actions";
+import { addGoal } from "../../state/actions";
 import {
   InputGroup,
   InputGroupText,
