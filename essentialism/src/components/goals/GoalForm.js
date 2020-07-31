@@ -52,6 +52,7 @@ const GoalForm = (props) => {
             />
           </InputGroup>
         </div>
+        <br/>
         <div className="formInput">
           <InputGroup>
             <InputGroupAddon addonType="prepend">
@@ -65,6 +66,8 @@ const GoalForm = (props) => {
             />
           </InputGroup>
         </div>
+        <br />
+        
         <Button type="submit" color="primary">Add New Goal</Button>
       </form>
     </div>
