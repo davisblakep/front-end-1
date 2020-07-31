@@ -1,18 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
+// import { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchGoals, removeGoal } from "../../state/actions";
 import Goal from "./Goal";
 
 const Goals = (props) => {
-  console.log(props);
-  useEffect(() => {
-    console.log("fetching");
-    props.fetchGoals();
-  }, []);
+  // console.log(props);
+  // useEffect(() => {
+  //   console.log("fetching");
+  //   props.fetchGoals();
+  // }, [props.updated]);
 
-  if (props.updated) {
-    props.fetchGoals();
-  }
+  // if (props.updated) {
+  //   props.fetchGoals();
+  // }
 
   const handleDelete = (id) => {
     console.log(id);
@@ -35,9 +36,9 @@ const mapStateToProps = (state) => {
   console.log("goals mapStateToProps", state);
   return {
     goals: state.essentialismReducer.goals,
-    isFetching: state.isFetching,
-    error: state.error,
-    updated: state.updated,
+    isFetching: state.essentialismReducer.isFetching,
+    error: state.essentialismReducer.error,
+    updated: state.essentialismReducer.updated,
   };
 };
 

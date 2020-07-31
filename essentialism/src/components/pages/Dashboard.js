@@ -96,7 +96,6 @@ const Dashboard = (props) => {
       </div>
       
     </div>
-    // </div>
             )}
             </Spring>
 );

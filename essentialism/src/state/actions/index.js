@@ -114,3 +114,29 @@ export const removeGoal = (id) => {
     dispatch({type: "REMOVE_GOAL", payload: id});
   };
 };
+
+
+export const addValue = (newValue) => {
+  return dispatch => {
+    dispatch({type: "ADD_VALUE", payload: newValue});
+  };
+};
+
+
+export const deleteValue = (id) => {
+  return dispatch => {
+    dispatch({type: "DELETE_VALUE", payload: id});
+  };
+};
+
+export const editValue = (id) => {
+  return dispatch => {
+    dispatch({type: "EDIT_VALUE", payload: id});
+  };
+};
+
+export const submitEditValue = (id, formState) => {
+  return dispatch => {
+    dispatch({type: "SUBMIT_EDIT_VALUE", payload: {id: id, formState: formState}});
+  };
+};
