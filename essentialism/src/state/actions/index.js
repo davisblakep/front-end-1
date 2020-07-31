@@ -94,17 +94,23 @@ export const fetchGoals = () => (dispatch) => {
 //     .catch((err) => dispatch({ type: ADD_FAILURE }));
 // };
 
-export const removeGoal = (id) => (dispatch) => {
-  dispatch({ type: REMOVE_ITEM });
-  axios
-    .delete(`http://localhost:3333`)
-    .then((res) => dispatch({ type: REMOVE_SUCCESS }))
-    .catch((err) => dispatch({ type: REMOVE_FAILURE }));
-};
+// export const removeGoal = (id) => (dispatch) => {
+//   dispatch({ type: REMOVE_ITEM });
+//   axios
+//     .delete(`http://localhost:3333`)
+//     .then((res) => dispatch({ type: REMOVE_SUCCESS }))
+//     .catch((err) => dispatch({ type: REMOVE_FAILURE }));
+// };
 
 
 export const addGoal = (title, date) => {
   return dispatch => {
     dispatch({type: "ADD_GOAL", payload: { title: title, date: date }});
+  };
+};
+
+export const removeGoal = (id) => {
+  return dispatch => {
+    dispatch({type: "REMOVE_GOAL", payload: id});
   };
 };

@@ -206,7 +206,13 @@ export function essentialismReducer(state = initialState, action){
               id: Date.now()
             }
           ]
-        }
+        };
+
+        case "REMOVE_GOAL":
+        return{
+          ...state,
+          goals: [...state.goals.filter(item => item.id !== action.payload)]
+        };
                     
       default: 
           return state;
