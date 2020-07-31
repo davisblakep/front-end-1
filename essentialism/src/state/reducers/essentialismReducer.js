@@ -1,5 +1,26 @@
-const initialState = {
+import {
+  INITIAL_FETCH,
+  FETCH_SUCCESS,
+  FETCH_FAIL,
+  ADD_SUCCESS,
+  REMOVE_SUCCESS,
+} from "../../state/actions";
+
+  const initialState = {
     
+  goals: [
+    {
+      title: "get better at this stuff",
+      date: "",
+      id: Date.now(),
+    },
+  ],
+  isFetching: false,
+  error: "",
+  isSaving: false,
+    updated: false,
+    
+
   user: {
       firstName: '',
       lastName: '',
@@ -94,20 +115,21 @@ export function essentialismReducer(state = initialState, action){
       //     user: action.payload.user,
       //     isFetching: false,
       //     error: '',
-      // }
-      case "TOGGLE_VALUE":
-      return{
-          ...state,
-          values: state.values.map(item => {
-              if (action.payload === item.id) {
-                return {
-                  ...item,
-                  isSelected: !item.isSelected,
-                };
-              }
-              return item;
-          })
-            }
+    // }
+    
+      // case "TOGGLE_VALUE":
+      // return{
+      //     ...state,
+      //     values: state.values.map(item => {
+      //         if (action.payload === item.id) {
+      //           return {
+      //             ...item,
+      //             isSelected: !item.isSelected,
+      //           };
+      //         }
+      //         return item;
+      //     })
+      //       }
             case "CHANGE_NAV_NAME":
       return{
           ...state,
@@ -121,7 +143,68 @@ export function essentialismReducer(state = initialState, action){
                   displayNav: "/login"
                     }
       
+      case INITIAL_FETCH:
+      return {
+        ...state,
+        isFetching: true,
+        error: "",
+        updated: false,
+      };
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        error: "",
+        goals: action.payload,
+        updated: false,
+      };
+    case FETCH_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false,
+        updated: false,
+      };
+    case ADD_SUCCESS:
+      return {
+        ...state,
+        updated: true,
+      };
+    case REMOVE_SUCCESS:
+      return {
+        ...state,
+        updated: true,
+      };
+
+    case "TOGGLE_VALUE":
+      return {
+        ...state,
+        values: state.values.map((item) => {
+          if (action.payload === item.id) {
+            return {
+              ...item,
+              isSelected: !item.isSelected,
+            };
+          }
+          return item;
+        }),
+      };
+                    
       default: 
           return state;
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
   }
 }
