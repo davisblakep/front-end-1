@@ -92,7 +92,7 @@ const DashboardPage = (props) => {
             <h1 style={{color: "lightgray"}}>Your Current Values:</h1>
             <div style={{display: "flex", flexDirection: "column"}}>
             {props.data.map(item => {return(
-                <Button color="white" style={{color: "white"}}>{item.value}</Button>
+                item.isSelected && <Button color="white" style={{color: "white"}}>{item.value}</Button>
             )})}
           </div>
          
