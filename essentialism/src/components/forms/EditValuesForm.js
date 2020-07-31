@@ -12,7 +12,7 @@ import FormControl from '@material-ui/core/FormControl';
 import { useHistory, useParams } from 'react-router-dom';
 import * as yup from 'yup';
 // import { updateNavName } from '../../state/actions'
-import { editValue } from '../../state/actions';
+import { submitEditValue } from '../../state/actions';
 // import axios from 'axios';
 
 
@@ -51,20 +51,21 @@ const useStyles = makeStyles((theme) => ({
 const EditValuesForm = (props) => {
     let history = useHistory();
     let params = useParams();
-    const id = params.id;
+    const paramsid = params.id;
     const classes = useStyles();
 
-    useEffect(() => {
-      
-    }, [])
+
+    
 
   const [formState, setFormState] = useState({
-    value: props.editValues[0].value,
-    description: props.editValues[0].description,
-    img: props.editValues[0].img,
+    value: props.editValues.value,
+    description: props.editValues.description,
+    img: props.editValues.img,
     id: Date.now(),
     isSelected: false,
 })
+
+console.log("Logging updated formState in EditValuesForm", formState)
 
 const [errorState, setErrorState] = useState({
     value: "",
@@ -105,13 +106,17 @@ const cancelButton = (e) => {
     return history.goBack();
   }
 
+  console.log("ParamsID in EditValuesForm", paramsid)
+
 const submitForm = (e) => {
     e.preventDefault();
-    props.addValue(formState)
+    props.submitEditValue(props.editValues.id, formState)
+    console.log("submitEditValues action Submit")
     setFormState({value: "",
     description: "",
     img:"",
 })
+submitButton()
     // axios
     //     .post("https://vr-direct1.herokuapp.com/api/backer/login", formState)
     //     .then(response => {
@@ -123,7 +128,7 @@ const submitForm = (e) => {
     //       {props.BackerDisplayName.BackerDisplayName(response, decoded)};
     //       ;})
     //     .catch(err => {console.log("Axios error", err)});
-    cancelButton()
+    // cancelButton()
 }
 
   return (
@@ -177,7 +182,7 @@ const submitForm = (e) => {
                  <Typography style={{color: 'red', fontSize: '10px'}}>{errorState.img}</Typography>
                </FormControl>
              <CardActions>
-           <Button onClick={submitForm} size="small">Submit</Button>
+           <Button type="submit" size="small">Submit</Button>
            <Button onClick={cancelButton} size="small">Cancel</Button>
            <a style={{marginBottom: "2%", marginLeft: "6%", font: "1.8rem"}} href="https://www.pexels.com" target="_blank">Pexels</a>
           </CardActions>
@@ -191,7 +196,7 @@ const submitForm = (e) => {
 
 
 const mapStateToProps = state => {
-  console.log("Edit Values State", state.essentialismReducer.editValues[0]);
+  console.log("Edit Values State", state.essentialismReducer.editValues);
   
   return{
       
@@ -200,4 +205,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {editValue})(EditValuesForm);
+export default connect(mapStateToProps, {submitEditValue})(EditValuesForm);

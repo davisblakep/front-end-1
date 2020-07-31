@@ -134,3 +134,9 @@ export const editValue = (id) => {
     dispatch({type: "EDIT_VALUE", payload: id});
   };
 };
+
+export const submitEditValue = (id, formState) => {
+  return dispatch => {
+    dispatch({type: "SUBMIT_EDIT_VALUE", payload: {id: id, formState: formState}});
+  };
+};

@@ -93,13 +93,15 @@ import {
   error: '',
   displayName: 'LOGIN',
   displayNav: '/login',
-  editValues: [
+  editValues: 
     {
     value: "Sneak 100",
     description: "Please Authenticate",
-    img: "https://images.pexels.com/photos/1270184/pexels-photo-1270184.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    img: "https://images.pexels.com/photos/204366/pexels-photo-204366.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    id: Date.now(),
+    isSelected: false,
     }
-  ],
+  
 }
 
 
@@ -223,8 +225,14 @@ export function essentialismReducer(state = initialState, action){
         case "EDIT_VALUE":
         return{
           ...state,
-          editValues: [...state.values.filter(item => item.id === action.payload)]
+          editValues: [...state.values.filter(item => item.id === action.payload)][0]
         };
+
+        case "SUBMIT_EDIT_VALUE":
+          return{
+            ...state,
+            values: [action.payload.formState, ...state.values.filter(item => item.id !== action.payload.id)]
+          }
 
         case "ADD_VALUE":
         return{

@@ -175,7 +175,7 @@ const submitForm = (e) => {
                  <Typography style={{color: 'red', fontSize: '10px'}}>{errorState.img}</Typography>
                </FormControl>
              <CardActions>
-           <Button onClick={submitForm} size="small">Submit</Button>
+           <Button type="submit" size="small">Submit</Button>
            <Button onClick={cancelButton} size="small">Cancel</Button>
            <a style={{marginBottom: "2%", marginLeft: "6%", font: "1.8rem"}} href="https://www.pexels.com" target="_blank">Pexels</a>
           </CardActions>
