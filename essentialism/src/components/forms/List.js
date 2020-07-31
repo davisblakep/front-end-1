@@ -3,6 +3,20 @@ import PropTypes from "prop-types";
 import Item from "./Item";
 
 function List({ items, completeItem }) {
+  // const [itemList, setItemList] = useState([]);
+  // useEffect(() => {
+  //   fetchItems();
+  // }, []);
+
+  // const fetchItems = () => {
+  //   axiosWithAuth()
+  //     .get("")
+  //     .then((res) => {
+  //       setItemList(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+
   if (items.length === 0) {
     return (
       <div className="alert alert-success" role="alert">

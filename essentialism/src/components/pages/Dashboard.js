@@ -61,10 +61,10 @@ const Dashboard = (props) => {
     >
         {props=>(
             <div style={props}>
-    \
+    
       {/* <div className="dashboard"> */}
       
-        <div className="fluid-container app-container" style={{backgroundColor: "black", marginTop: "-2%"}}>
+        <div className="fluid-container app-container" style={{backgroundColor: "black"}}>
         <div className="dashboard-background">
         
        
