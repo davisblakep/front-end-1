@@ -17,24 +17,24 @@ export const fetchUserData = () => {
 }
 
 
-export const createUser = (newUser) => {
-    return dispatch => {
-        axios
-            .post('http://localhost:3333/',
-            {
-                firstName: newUser.firstName,
-                lastName: newUser.lastName,
-                email: newUser.email, 
-                id: Date.now(),
-            }
-            )
-            .then(res => {
-                console.log("Axios Reponse from createUser POST", res)
-                dispatch({ type: 'POST_NEW_USER', payload: res.data})
-            })
-            .catch(err => {console.log('Axios error from POST', err)})
-    }
-}
+// export const createUser = (newUser) => {
+//     return dispatch => {
+//         axios
+//             .post('http://localhost:3333/',
+//             {
+//                 firstName: newUser.firstName,
+//                 lastName: newUser.lastName,
+//                 email: newUser.email, 
+//                 id: Date.now(),
+//             }
+//             )
+//             .then(res => {
+//                 console.log("Axios Reponse from createUser POST", res)
+//                 dispatch({ type: 'POST_NEW_USER', payload: res.data})
+//             })
+//             .catch(err => {console.log('Axios error from POST', err)})
+//     }
+// }
 
 
 
