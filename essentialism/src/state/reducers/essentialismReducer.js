@@ -219,3 +219,5 @@ export function essentialismReducer(state = initialState, action){
 
   }
 }
+
+// 
