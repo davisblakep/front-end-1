@@ -121,3 +121,10 @@ export const addValue = (newValue) => {
     dispatch({type: "ADD_VALUE", payload: newValue});
   };
 };
+
+
+export const deleteValue = (id) => {
+  return dispatch => {
+    dispatch({type: "DELETE_VALUE", payload: id});
+  };
+};

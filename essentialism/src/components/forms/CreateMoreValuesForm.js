@@ -72,6 +72,7 @@ const inputChange = (e) => {
     setFormState({...formState, [e.target.name]: e.target.value});
 }
 
+
 const validate = e => {
   yup.reach(formSchema, e.target.name).validate(e.target.value)
   .then(valid => {

@@ -218,6 +218,12 @@ export function essentialismReducer(state = initialState, action){
           ...state,
           values: [action.payload, ...state.values]
         };
+
+        case "DELETE_VALUE":
+        return{
+          ...state,
+          values: [...state.values.filter(item => item.id !== action.payload)]
+        };
                     
       default: 
           return state;

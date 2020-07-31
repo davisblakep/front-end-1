@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { connect } from "react-redux";
-import { toggleValue } from "../../state/actions/";
+import { toggleValue, deleteValue } from "../../state/actions/";
 
 // import { axiosWithAuth } from '../utils/axiosWithAuth'
 
@@ -26,24 +26,16 @@ const Values = (props) => {
 
   // useEffect(() => {
   //     axiosWithAuth()
-  //         .get('/api/friends')
+  //         .get('')
   //         .then(res => setValue(res.data))
   //         .catch(err => console.log(err))
   // }, [])
 
-  // const toggleItem = (dataID) => {
-  //   setData(
-  //     data.map((item) => {
-  //       if (dataID === item.id) {
-  //         return {
-  //           ...item,
-  //           isSelected: !item.isSelected,
-  //         };
-  //       }
-  //       return item;
-  //     })
-  //   );
-  // };
+
+  const handleDelete = (id) => {
+    console.log(id);
+    props.deleteValue(id);
+  };
 
   return (
     <div>
@@ -118,6 +110,7 @@ const Values = (props) => {
                         </CardContent>
                       </CardActionArea>
                       <CardActions>
+                      
                         {item.isSelected ? (
                           <Button
                             style={{ color: "white" }}
@@ -132,12 +125,8 @@ const Values = (props) => {
                             Add
                           </Button>
                         )}
-                        {/* <Button size="small" color="primary">
-          Add
-        </Button>
-        <Button size="small" color="primary">
-          Remove
-        </Button> */}
+                        <Button style={{ color: "white" }}>Edit</Button>
+                        <Button style={{ color: "white" }} onClick={(() => handleDelete(item.id))}>Delete</Button>
                       </CardActions>
                     </Card>
                   </Grid>
@@ -215,6 +204,7 @@ const Values = (props) => {
                           <Button size="small" color="primary">
                             Remove
                           </Button>
+                          
                         ) : (
                           <Button
                             onClick={() => props.toggleValue(item.id)}
@@ -225,12 +215,8 @@ const Values = (props) => {
                             Add
                           </Button>
                         )}
-                        {/* <Button size="small" color="primary">
-          Add
-        </Button>
-        <Button size="small" color="primary">
-          Remove
-        </Button> */}
+                       <Button style={{ color: "white" }}>Edit</Button>
+                        <Button style={{ color: "white" }} onClick={(() => handleDelete(item.id))}>Delete</Button>
                       </CardActions>
                     </Card>
                   </Grid>
@@ -251,4 +237,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { toggleValue })(Values);
+export default connect(mapStateToProps, { toggleValue, deleteValue })(Values);
