@@ -14,6 +14,7 @@ import InitialAddValuesPage from "./components/pages/InitialAddValuesPage";
 import FeedbackPage from './components/pages/FeedbackPage';
 import FeedbackFormPage from './components/pages/FeedbackFormPage';
 import HelpPage from './components/pages/HelpPage';
+import CreateMoreValuesPage from './components/pages/CreateMoreValuesPage'
 import { Spring } from 'react-spring/renderprops';
 
 function App(props) {
@@ -67,6 +68,9 @@ function App(props) {
           </Route>
           <Route path="/dashboard/values">
             <DashboardValues />
+          </Route>
+          <Route path="/choose-change">
+            <CreateMoreValuesPage />
           </Route>
         </Switch>
       </div>

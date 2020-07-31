@@ -114,3 +114,10 @@ export const removeGoal = (id) => {
     dispatch({type: "REMOVE_GOAL", payload: id});
   };
 };
+
+
+export const addValue = (newValue) => {
+  return dispatch => {
+    dispatch({type: "ADD_VALUE", payload: newValue});
+  };
+};
