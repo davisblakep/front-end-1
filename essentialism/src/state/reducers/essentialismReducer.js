@@ -15,13 +15,12 @@ import {
       id: 1,
     },
     {
-      title: "Eat a cheeseburger",
-      date: "August 01 2020",
+      title: "Donate 1/2 of clothing in closet to clear space.",
+      date: "August 25 2020",
       id: 2,
     },
   ],
-  isFetching: false,
-  error: "",
+  
   isSaving: false,
     updated: false,
     
@@ -42,8 +41,8 @@ import {
     ],
   values: [
       {
-        value: "Weight Loss",
-        description: "Improve your health with weight loss.",
+        value: "Exercise",
+        description: "Improve your health.",
         img:
           "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         id: 1,
@@ -59,7 +58,7 @@ import {
       },
       {
         value: "Reading",
-        description: "For those who love to read or want to read more.",
+        description: "Convert words into thoughts or ideas.",
         img:
           "https://images.pexels.com/photos/34075/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
         id: 3,
@@ -67,14 +66,14 @@ import {
       },
       {
         value: "Writing",
-        description: "Write down your thoughts.",
+        description: "Translating thoughts or ideas into comprehensive script.",
         img:
           "https://images.pexels.com/photos/3059747/pexels-photo-3059747.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
         id: 4,
         isSelected: false,
       },
       {
-        value: "Less Social Media",
+        value: "Social Media",
         description: "Unplug from the Matrix.",
         img:
           "https://images.pexels.com/photos/17663/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
@@ -94,6 +93,15 @@ import {
   error: '',
   displayName: 'LOGIN',
   displayNav: '/login',
+  editValues: 
+    {
+    value: "Sneak 100",
+    description: "Please Authenticate",
+    img: "https://images.pexels.com/photos/204366/pexels-photo-204366.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+    id: Date.now(),
+    isSelected: false,
+    }
+  
 }
 
 
@@ -212,6 +220,30 @@ export function essentialismReducer(state = initialState, action){
         return{
           ...state,
           goals: [...state.goals.filter(item => item.id !== action.payload)]
+        };
+
+        case "EDIT_VALUE":
+        return{
+          ...state,
+          editValues: [...state.values.filter(item => item.id === action.payload)][0]
+        };
+
+        case "SUBMIT_EDIT_VALUE":
+          return{
+            ...state,
+            values: [action.payload.formState, ...state.values.filter(item => item.id !== action.payload.id)]
+          }
+
+        case "ADD_VALUE":
+        return{
+          ...state,
+          values: [action.payload, ...state.values]
+        };
+
+        case "DELETE_VALUE":
+        return{
+          ...state,
+          values: [...state.values.filter(item => item.id !== action.payload)]
         };
                     
       default: 
