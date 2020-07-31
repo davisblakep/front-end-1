@@ -93,6 +93,13 @@ import {
   error: '',
   displayName: 'LOGIN',
   displayNav: '/login',
+  editValues: [
+    {
+    value: "Sneak 100",
+    description: "Please Authenticate",
+    img: "https://images.pexels.com/photos/1270184/pexels-photo-1270184.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+    }
+  ],
 }
 
 
@@ -211,6 +218,12 @@ export function essentialismReducer(state = initialState, action){
         return{
           ...state,
           goals: [...state.goals.filter(item => item.id !== action.payload)]
+        };
+
+        case "EDIT_VALUE":
+        return{
+          ...state,
+          editValues: [...state.values.filter(item => item.id === action.payload)]
         };
 
         case "ADD_VALUE":

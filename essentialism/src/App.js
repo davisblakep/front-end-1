@@ -11,6 +11,7 @@ import DashboardValues from "./components/pages/DashboardValues";
 import CreateUserPage from "./components/pages/CreateUserPage";
 import WelcomeUserPage from "./components/pages/WelcomeUserPage";
 import InitialAddValuesPage from "./components/pages/InitialAddValuesPage";
+import EditValuesPage from "./components/pages/EditValuesPage";
 import FeedbackPage from './components/pages/FeedbackPage';
 import FeedbackFormPage from './components/pages/FeedbackFormPage';
 import HelpPage from './components/pages/HelpPage';
@@ -66,6 +67,7 @@ function App(props) {
           <Route exact path="/helppage">
             <HelpPage />
           </Route>
+          <Route path="/edit-values/:id" component={EditValuesPage} />
           <Route path="/dashboard/values">
             <DashboardValues />
           </Route>

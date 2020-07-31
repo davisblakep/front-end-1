@@ -128,3 +128,9 @@ export const deleteValue = (id) => {
     dispatch({type: "DELETE_VALUE", payload: id});
   };
 };
+
+export const editValue = (id) => {
+  return dispatch => {
+    dispatch({type: "EDIT_VALUE", payload: id});
+  };
+};
