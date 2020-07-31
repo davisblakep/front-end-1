@@ -10,9 +10,14 @@ import {
     
   goals: [
     {
-      title: "get better at this stuff",
-      date: "",
-      id: Date.now(),
+      title: "Get better at this stuff",
+      date: "August 12 2020",
+      id: 1,
+    },
+    {
+      title: "Eat a cheeseburger",
+      date: "August 01 2020",
+      id: 2,
     },
   ],
   isFetching: false,
@@ -189,22 +194,22 @@ export function essentialismReducer(state = initialState, action){
           return item;
         }),
       };
+
+      case "ADD_GOAL":
+        return{
+          ...state,
+          goals: [
+            ...state.goals,
+            {
+              title: action.payload.title,
+              date: action.payload.date,
+              id: Date.now()
+            }
+          ]
+        }
                     
       default: 
           return state;
 
-
-
-
-
-
-
-
-
-
-
-
-
-          
   }
 }

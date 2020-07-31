@@ -89,12 +89,12 @@ const DashboardPage = (props) => {
           </Container>
         </Jumbotron>
         <div className="container">
-          <h1>Current Goals</h1>
+          <h1 style={{color: "lightgray", marginLeft: "1%"}}>Current Goals</h1>
           <Goals />
         </div>
       </div>
       <div className="container">
-        <h1>Add New Goals</h1>
+        <h1 style={{color: "lightgray", marginLeft: "1%"}}>Add New Goals</h1>
         <GoalForm />
       </div>
       {/* <div className="fluid-container app-container">
