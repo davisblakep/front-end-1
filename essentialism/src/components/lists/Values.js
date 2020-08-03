@@ -44,8 +44,7 @@ const Values = (props) => {
   const handleEdit = (id) => {
     console.log("handleEdit log", id);
     props.editValue(id);
-    history.push(`/edit-values/${id}`)
-    
+    history.push(`/edit-values/${id}`);
   };
 
   return (
@@ -121,7 +120,6 @@ const Values = (props) => {
                         </CardContent>
                       </CardActionArea>
                       <CardActions>
-                      
                         {item.isSelected ? (
                           <Button
                             style={{ color: "white" }}
@@ -136,8 +134,18 @@ const Values = (props) => {
                             Add
                           </Button>
                         )}
-                        <Button style={{ color: "white" }} onClick={(() => handleEdit(item.id))}>Edit</Button>
-                        <Button style={{ color: "white" }} onClick={(() => handleDelete(item.id))}>Delete</Button>
+                        <Button
+                          style={{ color: "white" }}
+                          onClick={() => handleEdit(item.id)}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          style={{ color: "white" }}
+                          onClick={() => handleDelete(item.id)}
+                        >
+                          Delete
+                        </Button>
                       </CardActions>
                     </Card>
                   </Grid>
@@ -215,7 +223,6 @@ const Values = (props) => {
                           <Button size="small" color="primary">
                             Remove
                           </Button>
-                          
                         ) : (
                           <Button
                             onClick={() => props.toggleValue(item.id)}
@@ -226,8 +233,18 @@ const Values = (props) => {
                             Add
                           </Button>
                         )}
-                       <Button style={{ color: "white" }} onClick={(() => handleEdit(item.id))}>Edit</Button>
-                        <Button style={{ color: "white" }} onClick={(() => handleDelete(item.id))}>Delete</Button>
+                        <Button
+                          style={{ color: "white" }}
+                          onClick={() => handleEdit(item.id)}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          style={{ color: "white" }}
+                          onClick={() => handleDelete(item.id)}
+                        >
+                          Delete
+                        </Button>
                       </CardActions>
                     </Card>
                   </Grid>
@@ -248,4 +265,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { toggleValue, deleteValue, editValue })(Values);
+export default connect(mapStateToProps, {
+  toggleValue,
+  deleteValue,
+  editValue,
+})(Values);

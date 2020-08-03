@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-// import PrivateRoute from './utils/PrivateRoute';
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
-// import Dashboard from "./components/pages/Dashboard";
 import DashboardPage from "./components/pages/DashboardPage";
 import NavBar from "./components/navbar/NavBar";
 import DashboardValues from "./components/pages/DashboardValues";
@@ -12,11 +10,13 @@ import CreateUserPage from "./components/pages/CreateUserPage";
 import WelcomeUserPage from "./components/pages/WelcomeUserPage";
 import InitialAddValuesPage from "./components/pages/InitialAddValuesPage";
 import EditValuesPage from "./components/pages/EditValuesPage";
-import FeedbackPage from './components/pages/FeedbackPage';
-import FeedbackFormPage from './components/pages/FeedbackFormPage';
-import HelpPage from './components/pages/HelpPage';
-import CreateMoreValuesPage from './components/pages/CreateMoreValuesPage'
-import { Spring } from 'react-spring/renderprops';
+import FeedbackPage from "./components/pages/FeedbackPage";
+import FeedbackFormPage from "./components/pages/FeedbackFormPage";
+import HelpPage from "./components/pages/HelpPage";
+import CreateMoreValuesPage from "./components/pages/CreateMoreValuesPage";
+import { Spring } from "react-spring/renderprops";
+
+// import PrivateRoute from "./utils/PrivateRoute";
 
 function App(props) {
   return (
@@ -30,7 +30,6 @@ function App(props) {
           <Route path="/login">
             <LoginPage />
           </Route>
-          
           <Route path="/createuser">
             <CreateUserPage />
           </Route>
@@ -51,19 +50,18 @@ function App(props) {
           </Route>
           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
           <Route exact path="/dashboard">
-          <Spring
-            config={{delay: 100, duration: 575}}
-            from={{ opacity: 0}}
-            to={{ opacity: 1}}
+            <Spring
+              config={{ delay: 100, duration: 575 }}
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
             >
-            {props=>(
-              <div style={props}>
-                 <DashboardPage />
-              </div>
-            )}
-          </Spring>
+              {(props) => (
+                <div style={props}>
+                  <DashboardPage />
+                </div>
+              )}
+            </Spring>
           </Route>
-          
           <Route exact path="/helppage">
             <HelpPage />
           </Route>
@@ -81,4 +79,3 @@ function App(props) {
 }
 
 export default App;
-
