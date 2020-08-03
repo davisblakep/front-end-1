@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
-import { updateNavName } from '../../state/actions'
+import { updateNavName } from "../../state/actions";
 // import axios from 'axios';
 
 const formSchema = yup.object().shape({
@@ -92,7 +92,7 @@ const BackerSignupForm = (props) => {
   let history = useHistory();
 
   const submitButton = () => {
-    props.updateNavName(formState.username)
+    props.updateNavName(formState.username);
     return history.push("/welcome");
   };
 
@@ -107,8 +107,7 @@ const BackerSignupForm = (props) => {
       password: "",
     });
     // axios
-    //     // .post("https://localhost:4900/api/entrepreneur/register", formState)
-    //     .post("https://vr-direct1.herokuapp.com/api/backer/register", formState)
+    //     .post("https://localhost:4900/api/entrepreneur/register", formState)
     //     .then(response => {console.log("Axios response from Backer Login submit", response)})
     //     .catch(err => {console.log("Axios error", err)});
     submitButton();
@@ -220,7 +219,6 @@ const BackerSignupForm = (props) => {
       </Card>
     </div>
   );
-}
+};
 
-
-export default connect(null, {updateNavName})(BackerSignupForm);
+export default connect(null, { updateNavName })(BackerSignupForm);

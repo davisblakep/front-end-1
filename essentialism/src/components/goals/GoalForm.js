@@ -25,7 +25,7 @@ const GoalForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title, date);
-    console.log("Submitted form!!!")
+    console.log("Submitted form!!!");
     props.addGoal(title, date);
     setTitle("");
     setDate("");
@@ -45,7 +45,6 @@ const GoalForm = (props) => {
               <InputGroupText>Name: </InputGroupText>
             </InputGroupAddon>
             <Input
-              
               type="text"
               name="name"
               value={title}
@@ -53,14 +52,13 @@ const GoalForm = (props) => {
             />
           </InputGroup>
         </div>
-        <br/>
+        <br />
         <div className="formInput">
           <InputGroup>
             <InputGroupAddon addonType="prepend">
               <InputGroupText>Date: </InputGroupText>
             </InputGroupAddon>
             <Input
-            
               type="date"
               name="date"
               value={date}
@@ -69,8 +67,9 @@ const GoalForm = (props) => {
           </InputGroup>
         </div>
         <br />
-        
-        <Button type="submit" color="primary">Add New Goal</Button>
+        <Button type="submit" color="primary">
+          Add New Goal
+        </Button>
       </form>
     </div>
   );

@@ -6,8 +6,8 @@ import goalsApi from "../forms/goalsApi";
 import isOverdue from "../forms/isOverdue";
 import Header from "../forms/Header";
 import List from "../forms/List";
-import { Spring } from 'react-spring/renderprops';
-import { logoutNavName } from '../../state/actions'
+import { Spring } from "react-spring/renderprops";
+import { logoutNavName } from "../../state/actions";
 
 const Dashboard = (props) => {
   const history = useHistory();
@@ -55,50 +55,58 @@ const Dashboard = (props) => {
 
   return (
     <Spring
-    config={{delay: 100, duration: 575}}
-    from={{ opacity: 0}}
-    to={{ opacity: 1}}
+      config={{ delay: 100, duration: 575 }}
+      from={{ opacity: 0 }}
+      to={{ opacity: 1 }}
     >
-        {props=>(
-            <div style={props}>
-    
-      {/* <div className="dashboard"> */}
-      
-        <div className="fluid-container app-container" style={{backgroundColor: "black"}}>
-        <div className="dashboard-background">
-        
-       
-          
-        
-        <Header addItem={add} filter={filter} setFilter={setFilter} />
-        {!loading && (
-          <div className="list">
-            <List items={filteredItems} completeItem={complete} />
+      {(props) => (
+        <div style={props}>
+          {/* <div className="dashboard"> */}
+
+          <div
+            className="fluid-container app-container"
+            style={{ backgroundColor: "black" }}
+          >
+            <div className="dashboard-background">
+              <Header addItem={add} filter={filter} setFilter={setFilter} />
+              {!loading && (
+                <div className="list">
+                  <List items={filteredItems} completeItem={complete} />
+                </div>
+              )}
+              {loading && (
+                <div className="alert alert-info" role="alert">
+                  Loading please wait...
+                </div>
+              )}
+              <div style={{ display: "flex", flexDirection: "row-reverse" }}>
+                <Button
+                  style={{ color: "white", backgroundColor: "black" }}
+                  onClick={submit}
+                  variant="outlined"
+                >
+                  Log Out
+                </Button>
+                <Button
+                  style={{ color: "white", backgroundColor: "black" }}
+                  onClick={addValues}
+                  variant="outlined"
+                >
+                  Change Values
+                </Button>
+                <Button
+                  style={{ color: "white", backgroundColor: "black" }}
+                  variant="outlined"
+                >
+                  Help
+                </Button>
+              </div>
+            </div>
           </div>
-        )}
-        {loading && (
-          <div className="alert alert-info" role="alert">
-            Loading please wait...
-          </div>
-        )}
-        <div style={{display: "flex", flexDirection: "row-reverse"}}>
-        <Button style={{color: "white", backgroundColor: "black"}} onClick={submit} variant="outlined">
-          Log Out
-        </Button>
-        <Button style={{color: "white", backgroundColor: "black"}} onClick={addValues} variant="outlined">
-          Change Values
-        </Button>
-        <Button style={{color: "white", backgroundColor: "black"}} variant="outlined">
-          Help
-        </Button>
         </div>
-      </div>
-      </div>
-      
-    </div>
-            )}
-            </Spring>
-);
+      )}
+    </Spring>
+  );
 };
 
-export default connect(null, {logoutNavName})(Dashboard);
+export default connect(null, { logoutNavName })(Dashboard);
