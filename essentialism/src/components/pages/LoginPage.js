@@ -2,7 +2,7 @@ import React from "react";
 // import { useHistory } from "react-router-dom";
 // import Button from '@material-ui/core/Button';
 import LoginForm from "../forms/LoginForm";
-import { Spring } from 'react-spring/renderprops';
+import { Spring } from "react-spring/renderprops";
 
 const LoginPage = () => {
   //   const history = useHistory();
@@ -15,18 +15,18 @@ const LoginPage = () => {
   //create a protected page when user logs in
   return (
     <Spring
-    config={{delay: 100, duration: 575}}
-    from={{ opacity: 0}}
-    to={{ opacity: 1}}
+      config={{ delay: 100, duration: 575 }}
+      from={{ opacity: 0 }}
+      to={{ opacity: 1 }}
     >
-        {props=>(
-            <div style={props}>
-    <div className="loginPage">
-      <LoginForm />
-    </div>
-    </div>
-            )}
-            </Spring>
+      {(props) => (
+        <div style={props}>
+          <div className="loginPage">
+            <LoginForm />
+          </div>
+        </div>
+      )}
+    </Spring>
   );
 };
 

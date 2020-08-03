@@ -1,21 +1,21 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
+    "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: '50ch',
+      width: "50ch",
     },
   },
 }));
 
 export default function FeedbackForm() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -102,10 +102,10 @@ export default function FeedbackForm() {
         />
       </div>
       <Link to="/dashboard">
-      <Button>Submit</Button>
+        <Button>Submit</Button>
       </Link>
       <Link to="/dashboard">
-      <Button>Skip</Button>
+        <Button>Skip</Button>
       </Link>
     </form>
   );

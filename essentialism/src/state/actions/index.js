@@ -1,21 +1,21 @@
-import axios from 'axios';
-
+import axios from "axios";
 
 // Actions for the API
 
-export const fetchUserData = () => {
-    return dispatch => {
-        dispatch({ type: 'FETCH_USER_START'});
-        axios
-            .get('http://localhost:3333/')
-            .then(res => {
-                console.log("Axios Reponse", res)
-                dispatch({ type: 'FETCH_USER_SUCCESS', payload: res.data})
-            })
-            .catch(err => {console.log('Axios error', err)})
-    }
-}
-
+// export const fetchUserData = () => {
+//   return (dispatch) => {
+//     dispatch({ type: "FETCH_USER_START" });
+//     axios
+//       .get("http://localhost:3333/")
+//       .then((res) => {
+//         console.log("Axios Reponse", res);
+//         dispatch({ type: "FETCH_USER_SUCCESS", payload: res.data });
+//       })
+//       .catch((err) => {
+//         console.log("Axios error", err);
+//       });
+//   };
+// };
 
 // export const createUser = (newUser) => {
 //     return dispatch => {
@@ -24,7 +24,7 @@ export const fetchUserData = () => {
 //             {
 //                 firstName: newUser.firstName,
 //                 lastName: newUser.lastName,
-//                 email: newUser.email, 
+//                 email: newUser.email,
 //                 id: Date.now(),
 //             }
 //             )
@@ -36,36 +36,29 @@ export const fetchUserData = () => {
 //     }
 // }
 
-
-
 // Actions without the API
 
-
-
-
-export const toggleValue = id => {
-  console.log("Value clicked from toggleValue action",id);
-  return dispatch => {
-    dispatch({type: "TOGGLE_VALUE", payload: id});
-    
+export const toggleValue = (id) => {
+  console.log("Value clicked from toggleValue action", id);
+  return (dispatch) => {
+    dispatch({ type: "TOGGLE_VALUE", payload: id });
   };
 };
 
-export const updateNavName = username => {
-    console.log("Value clicked from updateNavName action", username);
-    return dispatch => {
-      dispatch({type: "CHANGE_NAV_NAME", payload: username});
-      
-    };
+export const updateNavName = (username) => {
+  console.log("Value clicked from updateNavName action", username);
+  return (dispatch) => {
+    dispatch({ type: "CHANGE_NAV_NAME", payload: username });
   };
+};
 
-  export const logoutNavName = () => {
-    return dispatch => {
-      dispatch({type: "LOGOUT_NAV_NAME"});
-    };
+export const logoutNavName = () => {
+  return (dispatch) => {
+    dispatch({ type: "LOGOUT_NAV_NAME" });
   };
+};
 
-  //THIS IS WHERE THE API SENDS A REQUEST AND RETURN THE INFORMATION
+//THIS IS WHERE THE API SENDS A REQUEST AND RETURN THE INFORMATION
 export const INITIAL_FETCH = "INITIAL_FETCH";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
@@ -102,41 +95,41 @@ export const fetchGoals = () => (dispatch) => {
 //     .catch((err) => dispatch({ type: REMOVE_FAILURE }));
 // };
 
-
 export const addGoal = (title, date) => {
-  return dispatch => {
-    dispatch({type: "ADD_GOAL", payload: { title: title, date: date }});
+  return (dispatch) => {
+    dispatch({ type: "ADD_GOAL", payload: { title: title, date: date } });
   };
 };
 
 export const removeGoal = (id) => {
-  return dispatch => {
-    dispatch({type: "REMOVE_GOAL", payload: id});
+  return (dispatch) => {
+    dispatch({ type: "REMOVE_GOAL", payload: id });
   };
 };
-
 
 export const addValue = (newValue) => {
-  return dispatch => {
-    dispatch({type: "ADD_VALUE", payload: newValue});
+  return (dispatch) => {
+    dispatch({ type: "ADD_VALUE", payload: newValue });
   };
 };
 
-
 export const deleteValue = (id) => {
-  return dispatch => {
-    dispatch({type: "DELETE_VALUE", payload: id});
+  return (dispatch) => {
+    dispatch({ type: "DELETE_VALUE", payload: id });
   };
 };
 
 export const editValue = (id) => {
-  return dispatch => {
-    dispatch({type: "EDIT_VALUE", payload: id});
+  return (dispatch) => {
+    dispatch({ type: "EDIT_VALUE", payload: id });
   };
 };
 
 export const submitEditValue = (id, formState) => {
-  return dispatch => {
-    dispatch({type: "SUBMIT_EDIT_VALUE", payload: {id: id, formState: formState}});
+  return (dispatch) => {
+    dispatch({
+      type: "SUBMIT_EDIT_VALUE",
+      payload: { id: id, formState: formState },
+    });
   };
 };
